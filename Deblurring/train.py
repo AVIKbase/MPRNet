@@ -85,6 +85,8 @@ if opt.TRAINING.RESUME:
 criterion_char = losses.CharbonnierLoss()
 criterion_edge = losses.EdgeLoss()
 
+# kjhdsgukshfgsh
+
 # ---------- Data loaders ----------
 print("Resolved train_dir path:", os.path.abspath(train_dir))
 print("Exists:", os.path.exists(train_dir))
