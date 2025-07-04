@@ -1,0 +1,34 @@
+######################################
+# MPRNet Training Configuration File #
+######################################
+
+# Note: GPU settings are ignored in CPU-only mode
+GPU: [0,1,2,3]  # Ignored by CPU-modified train.py
+
+VERBOSE: True
+
+MODEL:
+  MODE: 'Deblurring'
+  SESSION: 'MPRNet'
+
+OPTIM:
+  BATCH_SIZE: 16
+  NUM_EPOCHS: 3000
+  LR_INITIAL: 2e-4
+  LR_MIN: 1e-6
+
+TRAINING:
+  VAL_AFTER_EVERY: 20
+  RESUME: False
+  TRAIN_PS: 256
+  VAL_PS: 256
+
+  # Correct relative paths (from train.py located at: MPRNet/Deblurring/train.py)
+  TRAIN_DIR: '../Datasets/GoPro/train'
+  VAL_DIR: '../Datasets/GoPro/val'
+
+  # Checkpoint and results save path (relative to Deblurring/)
+  SAVE_DIR: './checkpoints'
+
+# (Optional) Enable if you want to save intermediate validation outputs
+# SAVE_IMAGES: True
